@@ -1,0 +1,183 @@
+/**
+ * DarrenAdd202103080: 抽出共有配置。
+ *
+ */
+
+
+ext {
+
+    androidId = [
+            compileSdkVersion: 28,
+            buildToolsVersion: "28.0.3",
+            minSdkVersion    : 17,
+            targetSdkVersion : 28,
+            versionCode      : 20210210,
+            versionName      : "3.4.0",
+    ]
+
+    appId = [
+            applicationId  : "cn.gd.snm.snmcm1",
+            basemoduleId   : "cn.gd.snm.basemodule",
+            routermoduleId : "cn.gd.snm.routermodule",
+            ottplayerId    : "com.hulian.newos.snmplayer",  //TODO：ottplayer组件id
+            livepage       : "cn.gd.snm.livepage",     //TODO：直播页
+            listpage       : "cn.gd.snm.module_listpage",  //TODO: 二级列表
+            dynamicpage    : "cn.gd.snm.module_dynamic",  //TODO: 动态配置页
+            detailpage     : "cn.gd.snm.module_detail",  //TODO: 播放详情页
+            standarbeans   : "cn.gd.snm.module_standarbean", //TODO：beans标准定义层
+            moduleHomeId   : "cn.gd.snm.module_home", // 首页模块
+            amtplayer      : "cn.gd.snm.module_amtplayer",    //TODO:Iptv播放器
+            libPlayListView: "cn.gd.snm.lib_playlistview", //TODO 播放列表控件
+            moduleChannelList: "cn.gd.snm.module_channellist", //TODO 个人中心模块
+            txplayer       : "cn.gd.snm.iptvtxzq",         //TODO 腾讯播放器
+            playerAdapter  : "cn.gd.snm.module_playerview",
+            live           : "cn.gd.snm.player", //直播页
+            vod            : "cn.gd.snm.player",//点播页
+            playerAdapter  : "cn.gd.snm.module_playerview",
+            modulePoweron  : "cn.gd.snm.module_poweron"//TODO 开机模块
+
+    ]
+
+
+    //TODO: 通用组件
+    dependencies = [
+            //            "appcompat" : "com.android.support:appcompat-v7:28.0.0",
+            //            "recyclerview" : "com.android.support:recyclerview-v7:28.0.0",
+            //            "constraint" : "com.android.support.constraint:constraint-layout:1.1.3",
+
+            // 迁移androidx相关库
+            "appcompat"            : "androidx.appcompat:appcompat:1.2.0",
+            "constraint"           : "androidx.constraintlayout:constraintlayout:2.0.4",
+            "recyclerview"         : "androidx.recyclerview:recyclerview:1.2.0",
+
+            "glide"                : 'com.github.bumptech.glide:glide:4.12.0',
+            "glide-transformations": 'jp.wasabeef:glide-transformations:4.0.1',
+            "okhttp"               : 'com.squareup.okhttp3:okhttp:3.12.11',
+            "blankj"               : 'com.blankj:utilcode:1.23.7',
+            // android 弹性动画库
+            "dynamicanimation"     : 'androidx.dynamicanimation:dynamicanimation:1.1.0-alpha03',
+            "leanback"             : "androidx.leanback:leanback:1.1.0-rc01",
+
+    ]
+
+
+    //TODO: Ottplahyer组件
+    dependsPlayer = [
+            "exoplayer": "com.google.android.exoplayer:exoplayer:2.9.3",
+
+    ]
+
+    //TODO: 列表组件
+    dependsListPage = [
+            listPageImport: [
+                    //leanback
+//                     'com.android.support:leanback-v17:28.0.0',
+                    'com.github.bumptech.glide:glide:4.8.0',
+                    'com.github.bumptech.glide:compiler:4.8.0',
+                    // ViewModel and LiveData
+                    "android.arch.lifecycle:extensions:1.1.1",
+                    // alternatively, just ViewModel
+                    "android.arch.lifecycle:viewmodel:1.1.1",
+                    // alternatively, just LiveData
+                    "android.arch.lifecycle:livedata:1.1.1",
+
+                    "io.reactivex.rxjava2:rxjava:2.1.1",
+
+                    //autodispose
+                    'com.uber.autodispose:autodispose-android-archcomponents:1.0.0-RC2',
+                    'com.uber.autodispose:autodispose:1.0.0-RC2',
+
+                    "androidx.core:core-ktx:1.3.2",
+                    'com.android.support:multidex:1.0.3'
+            ],
+    ]
+
+    //TODO: 动态组件页
+    dependsDynamicPage = [
+
+    ]
+
+    //TODO: 详情页组件页
+    dependsDetailPage = [
+            "baseRecyclerViewAdapterHelper": "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50",
+            //https://github.com/ReactiveX/RxJava/tree/2.x
+            "rxJava2"                      : "io.reactivex.rxjava2:rxjava:2.2.21",
+            //https://github.com/ReactiveX/RxAndroid/tree/2.x
+            "rxAndroid2"                   : "io.reactivex.rxjava2:rxandroid:2.1.1",
+
+    ]
+
+    //TODO: 播放列表组件
+    dependsPlayListView = [
+            "baseRecyclerViewAdapterHelper": "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50"
+    ]
+
+    //TODO: beans层组件
+    dependsBeansPage = [
+
+    ]
+
+    //TODO: amt播放器
+    dependsAmtplayer = [
+
+    ]
+    //TODO: TX播放器
+    dependsTxPlayer = [
+
+    ]
+    //TODO: Exo播放器
+    dependsExoPlayer = [
+            "exoplayer": "com.google.android.exoplayer:exoplayer:2.15.0",
+    ]
+    //TODO:播放器适配器
+    dependsPlayerAdapter = [
+            "BRVAH"       : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50',
+            "glide"       : 'com.github.bumptech.glide:glide:4.9.0',
+            "recyclerview": 'androidx.recyclerview:recyclerview:1.1.0',
+            "room"        : "android.arch.persistence.room:runtime:1.0.0-alpha5",
+    ]
+    dependsLive = [
+
+    ]
+    dependsVod = [
+
+    ]
+    //TODO: 通用配置依赖
+    dependenciesConfig = [
+
+            publicAndroidTestImplementation: [
+                    'androidx.test.ext:junit:1.1.2',
+                    'androidx.test.espresso:espresso-core:3.3.0'
+            ],
+            publicTestImplementation       : [
+                    'junit:junit:4.+'
+            ],
+            publicImplementationMaterial   : [
+                    'com.google.android.material:material:1.3.0'
+            ],
+
+            // dex分包
+            publicImplementationMultidex   : ['androidx.multidex:multidex:2.0.1'],
+
+            // 路由跳转
+            annotationProcessor            : [
+                    'com.alibaba:arouter-compiler:1.5.1'
+            ],
+
+            //首页模块应用库
+            homeModuleImplementation       : [
+                    'androidx.leanback:leanback:1.1.0-rc01',
+                    'androidx.appcompat:appcompat:1.2.0',
+                    'androidx.constraintlayout:constraintlayout:2.0.4',
+                    'androidx.viewpager2:viewpager2:1.1.0-alpha01',
+            ],
+
+            // 开发集成库
+            projectModule                  : [
+                    ':basemodule',
+                    ':routermodule',
+                    ':module-standarbean',
+            ]
+    ]
+
+}
