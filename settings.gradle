@@ -10,4 +10,6 @@ rootProject.name = "TestFrame"
 include ':app'
 include ':okhttpRetrofit'
 include ':webview'
-include ':glide'
+include ':glide-4-11-0'
+include ':glide-4-8-0'
+include ':testhandler'

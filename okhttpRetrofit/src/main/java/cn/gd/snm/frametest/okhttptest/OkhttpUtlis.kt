@@ -47,6 +47,7 @@ class OkhttpUtlis private constructor(){
      */
     fun doGetAsyn(url: String, networkCallback: (isSuccess: Boolean, content: String?) -> Unit){
         val request = Request.Builder().url(url).build()
+
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
                 handler.post {
